@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: paysim_raw
+    database: project-8c816add-07de-4163-bee
+    schema: paysim_raw
+    tables:
+      - name: transactions_raw
+        description: "Raw PaySim transaction data dari Kaggle"
