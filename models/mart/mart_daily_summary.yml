@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: mart_daily_summary
+    description: "Ringkasan transaksi harian — equivalent laporan EOD bank"
+    columns:
+      - name: day_number
+        tests:
+          - not_null
+      - name: total_transactions
+        tests:
+          - not_null
+      - name: fraud_rate_pct
+        description: "Harus selalu antara 0-100"
+        tests:
+          - not_null

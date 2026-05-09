@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: stg_transactions
+    description: "Cleaned and standardized PaySim transactions"
+    columns:
+      - name: transaction_type
+        description: "Tipe transaksi"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['TRANSFER', 'CASH_OUT', 'PAYMENT', 'CASH_IN', 'DEBIT']
+
+      - name: amount
+        description: "Nominal transaksi"
+        tests:
+          - not_null
+
+      - name: account_origin
+        description: "Rekening pengirim"
+        tests:
+          - not_null
+
+      - name: is_fraud
+        description: "Flag fraud"
+        tests:
+          - not_null
